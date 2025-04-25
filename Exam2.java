@@ -71,16 +71,10 @@ public class Exam2
         
         
         //26
-        System.out.println(Collections.max(temperatures));
+        System.out.println("The maximum temperature is " + Collections.max(temperatures));
         
         //27
        Collections.sort(temperatures);
-       for(double temp : temperatures){
-            double maxTemp = temp;
-            if (temp > maxTemp){
-                    maxTemp = temp;
-                }
-            System.out.println(temp);
-        }
+       System.out.println("The maximum temperature is " + temperatures.getLast());
     }
 }
