@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.Collections;
 /**
  * Write a description of class StringCompare here.
  *
@@ -9,15 +10,24 @@ public class Exam2
 {
     // instance variables - replace the example below with your own
     private int x;
-
     /**
      * Constructor for objects of class StringCompare
      */
     public Exam2()
     {
         x = 0;
+        
+        ArrayList<Double> temperatures = new ArrayList<Double>();
+        temperatures.add(37.9);
+        temperatures.add(38.5);
+        temperatures.add(39.8);
+        temperatures.add(35.7);
+        temperatures.add(28.9);
+        temperatures.add(42.3);
+        
+        fever(temperatures);
     }
-
+    
     /**
      * An example of a method - replace this comment with your own
      *
@@ -26,6 +36,7 @@ public class Exam2
      */
     public void Exam2()
     {
+        
         //Question 24
         
         //a)
@@ -42,21 +53,34 @@ public class Exam2
         }
     }
     
-    //25
-    /**public double fever();
-    for(double temp : temperatures){
-        int feverCase = 0;
-        double maxTemp = 0;
-            if(37.5 < temp && temp > maxTemp){
-                feverCase++;
-                maxTemp = temp;
-            }
-        System.out.println("There is " + feverCase + " fever cases" + " and the max temperature is " + maxTemp);
-    }*/
-    
-    //26
-    //System.out.println(temperatures.max());
-    
-    //27
-    //I'm not sure how but i think i could use the sorted list and print the last value since it's sorted from minimum to maximum and I need the maximum.
+    //25 
+    public void fever(ArrayList<Double> temperatures){
+        for(Double temp : temperatures){
+            int feverCase = 0;
+            double maxTemp = 0;
+                if(37.5 < temp){
+                    feverCase++;
+                    System.out.println("There is " + feverCase + " fever cases");
+                }
+                
+                if(temp > maxTemp){
+                    maxTemp = temp;
+                    System.out.println("The maximum temperature i " + maxTemp);
+                }
+        } 
+        
+        
+        //26
+        System.out.println(Collections.max(temperatures));
+        
+        //27
+       Collections.sort(temperatures);
+       for(double temp : temperatures){
+            double maxTemp = temp;
+            if (temp > maxTemp){
+                    maxTemp = temp;
+                }
+            System.out.println(temp);
+        }
+    }
 }
