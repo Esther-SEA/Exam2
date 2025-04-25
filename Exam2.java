@@ -55,20 +55,19 @@ public class Exam2
     
     //25 
     public void fever(ArrayList<Double> temperatures){
+        int feverCase = 0;
+        double maxTemp = 0;
         for(Double temp : temperatures){
-            int feverCase = 0;
-            double maxTemp = 0;
-                if(37.5 < temp){
+            if(37.5 < temp){
                     feverCase++;
-                    System.out.println("There is " + feverCase + " fever cases");
                 }
                 
-                if(temp > maxTemp){
+            if(temp > maxTemp){
                     maxTemp = temp;
-                    System.out.println("The maximum temperature i " + maxTemp);
                 }
         } 
-        
+        System.out.println("There is " + feverCase + " fever cases");
+        System.out.println("The maximum temperature i " + maxTemp);
         
         //26
         System.out.println("The maximum temperature is " + Collections.max(temperatures));
